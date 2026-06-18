@@ -16,7 +16,6 @@ npm-debug.log*
 # Design handoff source / scratch files (not part of the deployed site)
 handoff/
 *.zip
-*.mp4
 *.skill
 roofing skill.md
 Mike & Sons Homepage (standalone).html
