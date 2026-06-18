@@ -13,6 +13,12 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# Design handoff source (not part of the deployed site)
+# Design handoff source / scratch files (not part of the deployed site)
 handoff/
 *.zip
+*.mp4
+*.skill
+roofing skill.md
+Mike & Sons Homepage (standalone).html
+mike-and-sons-roofing.html
+roof-logo.svg
