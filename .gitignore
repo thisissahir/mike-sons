@@ -30,3 +30,6 @@ image.png_*.jpeg
 
 # Original full-size source images (web versions live in assets/)
 SERVICES/
+
+# Source photos (web-optimized copies live in assets/)
+RECENT WORK/

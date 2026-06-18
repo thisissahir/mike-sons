@@ -140,6 +140,8 @@
   .work-cta:hover{color:var(--red)}
   .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
   .work-img{height:230px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 36px -26px rgba(21,35,61,.5)}
+  .work-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .work-img:hover img{transform:scale(1.04)}
   .work-t{font:700 13px/1.2 Archivo,sans-serif;color:var(--navy);margin-top:12px}
   .work-p{font:600 11.5px/1.2 "JetBrains Mono",monospace;color:var(--muted);margin-top:4px}
 
@@ -570,14 +572,14 @@
 
   // work
   var projects=[
-    {t:'Asphalt shingle re-roof',p:'Fort Collins, CO'},
-    {t:'Standing-seam metal',p:'Windsor, CO'},
-    {t:'Hail damage repair',p:'Loveland, CO'},
-    {t:'Full tear-off & install',p:'Greeley, CO'}
+    {t:'Asphalt shingle re-roof',p:'Fort Collins, CO',img:'assets/work-shingle-reroof.jpg',alt:'Finished gray asphalt shingle roof on a two-story home'},
+    {t:'Standing-seam metal',p:'Windsor, CO',img:'assets/work-standing-seam.jpg',alt:'Dark standing-seam metal roof'},
+    {t:'Hail damage repair',p:'Loveland, CO',img:'assets/work-hail-repair.jpg',alt:'Roofer replacing hail-damaged shingles'},
+    {t:'Full tear-off & install',p:'Greeley, CO',img:'assets/work-tearoff-install.jpg',alt:'Crew tearing off and installing a new roof'}
   ];
   document.getElementById('workGrid').innerHTML = projects.map(function(p,i){
     return '<div data-reveal style="transition-delay:'+(i*60)+'ms">'+
-      '<div class="work-img"><div class="ph"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Drop a project photo</span></div></div>'+
+      '<div class="work-img"><img src="'+p.img+'" alt="'+p.alt+'" loading="lazy" width="600" height="460"></div>'+
       '<div class="work-t">'+p.t+'</div><div class="work-p">'+p.p+'</div>'+
     '</div>';
   }).join('');
