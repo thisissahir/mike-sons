@@ -27,3 +27,6 @@ image.png_*.jpeg
 
 # Local dev tooling
 .claude/
+
+# Original full-size source images (web versions live in assets/)
+SERVICES/
