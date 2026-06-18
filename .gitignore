@@ -24,3 +24,6 @@ roof-logo.svg
 
 # Stray pasted/temp images
 image.png_*.jpeg
+
+# Local dev tooling
+.claude/

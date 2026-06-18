@@ -291,7 +291,7 @@
 
 <!-- hero -->
 <section class="hero">
-  <video class="bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+  <video class="bg" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-hidden="true">
     <source src="roof-transformation.mp4" type="video/mp4">
   </video>
   <div class="scrim"></div>
@@ -490,6 +490,15 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // hero video: force autoplay where allowed; first user tap also kicks it off
+  (function(){
+    var v=document.getElementById('heroVideo'); if(!v) return;
+    var tryPlay=function(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); };
+    if(v.readyState>=2) tryPlay(); else v.addEventListener('loadeddata',tryPlay,{once:true});
+    document.addEventListener('touchstart',tryPlay,{once:true,passive:true});
+    document.addEventListener('click',tryPlay,{once:true});
+  })();
 
   // icons helpers
   function starSVG(s){return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="#E9B949" stroke="#E9B949" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';}
